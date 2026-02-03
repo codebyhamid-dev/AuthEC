@@ -1,0 +1,100 @@
+<div class="register-wrapper">
+  <div class="register-card shadow">
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <h2 class="brand-title">AuthEC</h2>
+      <p class="brand-subtitle">Create your account</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <!-- Full Name -->
+      <input
+        type="text"
+        class="form-control mb-1"
+        placeholder="Full Name"
+        formControlName="name"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          registerForm.get('name')?.touched && registerForm.get('name')?.invalid
+        "
+      >
+        Full name is required
+      </small>
+
+      <!-- Email -->
+      <input
+        type="email"
+        class="form-control mb-1 mt-3"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          registerForm.get('email')?.touched &&
+          registerForm.get('email')?.invalid
+        "
+      >
+        Enter a valid email
+      </small>
+
+      <!-- Password -->
+      <div class="input-group mt-3">
+        <input
+          [type]="showPassword ? 'password' : 'text'"
+          class="form-control"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span class="input-group-text eye-icon" (click)="togglePassword()">
+          <i
+            class="bi"
+            [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"
+          ></i>
+        </span>
+      </div>
+      <small
+        class="text-danger"
+        *ngIf="
+          registerForm.get('password')?.touched &&
+          registerForm.get('password')?.invalid
+        "
+      >
+        Minimum 6 characters
+      </small>
+
+      <!-- Confirm Password -->
+      <div class="input-group mt-3">
+        <input
+          [type]="showConfirmPassword ? 'password' : 'text'"
+          class="form-control"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+        />
+        <span
+          class="input-group-text eye-icon"
+          (click)="toggleConfirmPassword()"
+        >
+          <i
+            class="bi"
+            [ngClass]="showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"
+          ></i>
+        </span>
+      </div>
+      <small
+        class="text-danger"
+        *ngIf="
+          registerForm.errors?.['passwordMismatch'] &&
+          registerForm.get('confirmPassword')?.touched
+        "
+      >
+        Passwords do not match
+      </small>
+
+      <!-- Button -->
+      <button class="btn btn-success w-100 mt-4" type="submit">Register</button>
+    </form>
+  </div>
+</div>

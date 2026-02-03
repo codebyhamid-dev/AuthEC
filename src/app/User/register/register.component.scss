@@ -1,0 +1,99 @@
+.register-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #cfe1ff, #e8f0ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  background: #ffffff;
+  padding: 42px 34px;
+  width: 390px;
+  border-radius: 18px;
+}
+
+/* Branding */
+.brand-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1f3c88;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Form control styling - NO BORDER ON FOCUS */
+.form-control {
+  background-color: #f1f3f5 !important;
+  border: none !important;
+  height: 46px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding-left: 14px;
+  transition: all 0.2s ease;
+  outline: none !important;
+}
+
+/* Remove ALL borders and outlines on focus */
+.form-control:focus {
+  background-color: #f1f3f5 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Input group - remove all focus borders */
+.input-group:focus-within .form-control {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Password icon container */
+.input-group-text.eye-icon {
+  background-color: #f1f3f5 !important;
+  border: none !important;
+  border-radius: 0 10px 10px 0 !important;
+  cursor: pointer;
+  padding: 0 15px;
+  transition: all 0.2s ease;
+}
+
+/* When input is focused, keep eye icon consistent */
+.input-group:focus-within .input-group-text.eye-icon {
+  background-color: #f1f3f5 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Button */
+.btn-success {
+  height: 46px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(40, 167, 69, 0.3);
+}
+
+/* Validation text */
+.text-danger {
+  font-size: 12px;
+}
+
+/* Add spacing between form groups */
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
