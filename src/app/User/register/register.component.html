@@ -43,7 +43,7 @@
       <!-- Password -->
       <div class="input-group mt-3">
         <input
-          [type]="showPassword ? 'password' : 'text'"
+          [type]="showPassword ? 'text' : 'password'"
           class="form-control"
           placeholder="Password"
           formControlName="password"
@@ -51,7 +51,7 @@
         <span class="input-group-text eye-icon" (click)="togglePassword()">
           <i
             class="bi"
-            [ngClass]="showPassword ? 'bi-eye' : 'bi-eye-slash'"
+            [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
           ></i>
         </span>
       </div>
@@ -62,13 +62,14 @@
           registerForm.get('password')?.invalid
         "
       >
-        Minimum 6 characters
+        Password must have: 6+ characters, uppercase, lowercase, number, and
+        special character (!&#64;#$%^&*)
       </small>
 
       <!-- Confirm Password -->
       <div class="input-group mt-3">
         <input
-          [type]="showConfirmPassword ? 'password' : 'text'"
+          [type]="showConfirmPassword ? 'text' : 'password'"
           class="form-control"
           placeholder="Confirm Password"
           formControlName="confirmPassword"
@@ -79,7 +80,7 @@
         >
           <i
             class="bi"
-            [ngClass]="showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"
+            [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"
           ></i>
         </span>
       </div>
